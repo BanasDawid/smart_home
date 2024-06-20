@@ -1,0 +1,115 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Open Sans", "Raleway", sans-serif;
+	background-color: #222;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #424242;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.nav-items {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 60px;
+}
+
+.nav-icon {
+	background: none;
+	border: none;
+	font-size: 40px;
+	color: #09f;
+}
+
+h1 {
+	margin: 0;
+}
+
+.nav-text {
+	text-align: center;
+	font-size: 40px;
+	line-height: 60px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: #ddd;
+	text-shadow: 3px 2px 5px #000000;
+}
+
+.nav-text span {
+	text-transform: uppercase;
+	color: #09f;
+}
+.temperature-control {
+	text-align: center;
+	margin-top: 30px;
+	color: #ddd;
+}
+.temperature-control h2 {
+	text-align: center;
+	margin: 40px 0 20px;
+	color: #ddd;
+	font-size: 4vh;
+	font-weight: bold;
+	color: #ddd;
+}
+
+.room-container {
+	margin: 20px 10%;
+	width: 80%;
+	font-size: 3vh;
+	border: 2px groove #09f;
+	border-radius: 15%;
+}
+.room-container h3 {
+	font-size: 4vh;
+	padding-top: 20px;
+	color: red;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.current-temperature {
+	margin-bottom: 10px;
+}
+
+.target-temperature {
+	margin-bottom: 3vh;
+}
+/* .target-temperature input {
+	margin-top: 15%;
+} */
+
+.target-temperature span span {
+	color: red;
+}
+
+.btn-primary {
+	width: 40%;
+	margin: 2%;
+}
+
+input[type="range"] {
+	width: 80%;
+	margin: 3% auto;
+}
+
+footer {
+	text-align: center;
+	color: #ddd;
+	padding: 10px 0;
+	background-color: #424242;
+}

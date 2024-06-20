@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tag meta odswieza strone co 10 sekund -->
+    <meta http-equiv="refresh" content="30">
+    <title>OŚWIETLENIE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- link to ikon z bootstrapa -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+
+<body>
+    <nav>
+        <div class="wrapper nav-items">
+            <button class="nav-icon"><a href="{{url_for('index')}}"><i class="bi bi-house"></i></a></i></button>
+            <div class="nav-text">
+                <h1><span>smart</span> Home</h1>
+            </div>
+            <button class="nav-icon"><a href="{{url_for('profile')}}"><i class="bi bi-person"></a></i></button>
+        </div>
+    </nav>
+    <main class="wrapper rooms">
+        <div class="room-container">
+            <span>Salon</span>
+            <form method="post" action="/lights">
+                <input type="hidden" name="checkbox_id" value="living-room-light">
+                <input type="hidden" name="state" value="{{ 'off' if contacts_state['living-room-light'] else 'on' }}">
+                <input type="checkbox" id="living-room-light" name="living-room-light" style="display:none;" {% if
+                    contacts_state['living-room-light'] %} checked {% endif %}>
+                <label for="living-room-light" class="togle-button" onclick="this.parentNode.submit()"></label>
+            </form>
+        </div>
+        <div class="room-container">
+            <span>Kuchnia</span>
+            <form method="post" action="/lights">
+                <input type="hidden" name="checkbox_id" value="kitchen-light">
+                <input type="hidden" name="state" value="{{ 'off' if contacts_state['kitchen-light'] else 'on' }}">
+                <input type="checkbox" id="kitchen-light" name="kitchen-light" style="display:none;" {% if
+                    contacts_state['kitchen-light'] %} checked {% endif %}>
+                <label for="kitchen-light" class="togle-button" onclick="this.parentNode.submit()"></label>
+            </form>
+        </div>
+        <div class="room-container">
+            <span>Sypialnia</span>
+            <form method="post" action="/lights">
+                <input type="hidden" name="checkbox_id" value="bedroom-light">
+                <input type="hidden" name="state" value="{{ 'off' if contacts_state['bedroom-light'] else 'on' }}">
+                <input type="checkbox" id="bedroom-light" name="bedroom-light" style="display:none;" {% if
+                    contacts_state['bedroom-light'] %} checked {% endif %}>
+                <label for="bedroom-light" class="togle-button" onclick="this.parentNode.submit()"></label>
+            </form>
+        </div>
+        <div class="room-container">
+            <span>Łazienka</span>
+            <form method="post" action="/lights">
+                <input type="hidden" name="checkbox_id" value="bathroom-light">
+                <input type="hidden" name="state" value="{{ 'off' if contacts_state['bathroom-light'] else 'on' }}">
+                <input type="checkbox" id="bathroom-light" name="bathroom-light" style="display:none;" {% if
+                    contacts_state['bathroom-light'] %} checked {% endif %}>
+                <label for="bathroom-light" class="togle-button" onclick="this.parentNode.submit()"></label>
+            </form>
+        </div>
+        <div class="room-container">
+            <span>Gabinet</span>
+            <form method="post" action="/lights">
+                <input type="hidden" name="checkbox_id" value="office-light">
+                <input type="hidden" name="state" value="{{ 'off' if contacts_state['office-light'] else 'on' }}">
+                <input type="checkbox" id="office-light" name="office-light" style="display:none;" {% if
+                    contacts_state['office-light'] %} checked {% endif %}>
+                <label for="office-light" class="togle-button" onclick="this.parentNode.submit()"></label>
+            </form>
+        </div>
+        <div class="room-container">
+            <span>Pokój dziecięcy</span>
+            <form method="post" action="/lights">
+                <input type="hidden" name="checkbox_id" value="childroom-light">
+                <input type="hidden" name="state" value="{{ 'off' if contacts_state['childroom-light'] else 'on' }}">
+                <input type="checkbox" id="childroom-light" name="childroom-light" style="display:none;" {% if
+                    contacts_state['childroom-light'] %} checked {% endif %}>
+                <label for="childroom-light" class="togle-button" onclick="this.parentNode.submit()"></label>
+            </form>
+        </div>
+        <div class="room-container">
+            <span>Wiatrołap</span>
+            <form method="post" action="/lights">
+                <input type="hidden" name="checkbox_id" value="vestibule-light">
+                <input type="hidden" name="state" value="{{ 'off' if contacts_state['vestibule-light'] else 'on' }}">
+                <input type="checkbox" id="garage-light" name="vestibule-light" style="display:none;" {% if
+                    contacts_state['vestibule-light'] %} checked {% endif %}>
+                <label for="vestibule-light" class="togle-button" onclick="this.parentNode.submit()"></label>
+            </form>
+        </div>
+        <div class="room-container">
+            <span>Wejście</span>
+            <form method="post" action="/lights">
+                <input type="hidden" name="checkbox_id" value="entery-light">
+                <input type="hidden" name="state" value="{{ 'off' if contacts_state['entery-light'] else 'on' }}">
+                <input type="checkbox" id="entery-light" name="entery-light" style="display:none;" {% if
+                    contacts_state['entery-light'] %} checked {% endif %}>
+                <label for="entery-light" class="togle-button" onclick="this.parentNode.submit()"></label>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; SMART Home 2024</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
